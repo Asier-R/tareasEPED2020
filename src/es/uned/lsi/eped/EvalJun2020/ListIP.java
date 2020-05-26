@@ -41,7 +41,7 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
 
         if(pointer == 1){
             newNode.setNext(this.firstNode);
-            this.firstNode.setPrev(newNode);
+            if(this.firstNode != null) this.firstNode.setPrev(newNode);
             this.firstNode = newNode;
 
         }else{
@@ -50,7 +50,7 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
             prevNode.setNext(newNode);
             newNode.setNext(nextNode);
             newNode.setPrev(prevNode);
-            nextNode.setPrev(newNode);
+            if(nextNode != null) nextNode.setPrev(newNode);
 
         }
 
@@ -62,13 +62,13 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
         if(pointer < this.size + 1){
             if(pointer == 1){
                 this.firstNode = this.firstNode.getNext();
-                this.firstNode.setPrev(null);
+                if(this.firstNode != null) this.firstNode.setPrev(null);
 
             }else{
                 NodeSequence current = getNode(pointer);
                 NodeSequence prevNode = current.getPrev();
                 NodeSequence nextNode = current.getNext();
-                prevNode.setNext(nextNode);
+                if(prevNode != null) prevNode.setNext(nextNode);
                 nextNode.setPrev(prevNode);
             }
 
@@ -85,13 +85,7 @@ public class ListIP<E> extends SequenceDL<E> implements ListIPIF<E> {
     }
 
     public void setElem(E elem) {
-
-        if(pointer < this.size + 1){
-            getNode(pointer).setValue(elem);
-
-        }else{
-            throw new NullPointerException();
-        }
-
+        if(pointer < this.size + 1) getNode(pointer).setValue(elem);
+        else throw new NullPointerException();
     }
 }

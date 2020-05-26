@@ -23,7 +23,6 @@ public class Tarea1 {
 		ListIPIF<Integer> lista = new ListIP<Integer>();
 		
 		printStatus(lista);
-		
 		lista.insert(10);
 		lista.moveNext();
 		lista.insert(5);
@@ -49,11 +48,48 @@ public class Tarea1 {
 		lista.moveTo(1);
 		lista.setElem(823);
 		while ( ! lista.isEmpty() ) {
+			System.out.println("Size: "+lista.size());
 			System.out.print("Eliminando ");
 			System.out.println(lista.getElem());
 			lista.remove();
 		}
 		printStatus(lista);
+
+
+
+
+		lista = new ListIP<Integer>();
+
+
+		System.out.println("------------------------------------------");
+
+		lista.insert(1);
+		lista.moveNext();
+		lista.insert(2);
+		lista.moveNext();
+		lista.insert(3);
+		lista.moveNext();
+		lista.insert(4);
+		lista.moveNext();
+		lista.insert(5);
+		printStatus(lista);
+
+		System.out.println();
+		lista.moveTo(lista.size());
+		for(int i=1; i<=lista.size(); i++){
+			System.out.print(lista.getElem()+",");
+			if(i<lista.size())lista.movePrev();
+		}
+		System.out.println();
+		System.out.println();
+
+		lista.moveTo(1);
+		lista.remove();
+		lista.remove();
+		printStatus(lista);
+
+		System.out.println("------------------------------------------");
+
 
 	}
 	

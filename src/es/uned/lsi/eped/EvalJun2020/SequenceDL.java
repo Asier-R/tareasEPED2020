@@ -44,7 +44,7 @@ public class SequenceDL<E> extends Collection<E> implements SequenceDLIF<E> {
         }
 
         public void setPrev(NodeSequence p){
-            this.next = p;
+            this.prev = p;
         }
 
     }
@@ -60,22 +60,12 @@ public class SequenceDL<E> extends Collection<E> implements SequenceDLIF<E> {
 
         public E getNext() {
             E elem = this.currentNode.getValue();
-            this.currentNode = this.currentNode.getPrev();
-            return elem;
-        }
-
-        public E getPrev() {
-            E elem = this.currentNode.getValue();
-            this.currentNode = this.currentNode.getPrev();
+            this.currentNode = this.currentNode.getNext();
             return elem;
         }
 
         public boolean hasNext() {
             return this.currentNode != null;
-        }
-
-        public boolean hasPrev() {
-            return this.currentNode.getPrev() != null;
         }
 
         public void reset() {
