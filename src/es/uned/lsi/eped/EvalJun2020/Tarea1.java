@@ -36,11 +36,15 @@ public class Tarea1 {
 		printStatus(lista);
 		
 		lista.insert(3);
+		printStatus(lista);
 		lista.insert(13);
+		printStatus(lista);
 		lista.moveTo(lista.size()+1);
 		lista.insert(231);
+		printStatus(lista);
 		lista.moveNext();
 		lista.insert(1341);
+		printStatus(lista);
 		lista.moveTo(2);
 		lista.remove();
 		printStatus(lista);
@@ -87,6 +91,20 @@ public class Tarea1 {
 		lista.remove();
 		lista.remove();
 		printStatus(lista);
+		lista.remove();
+		printStatus(lista);
+		System.out.println("Elemento "+lista.getPointer()+": "+lista.getElem());
+		lista.moveNext();
+		System.out.println("Elemento "+lista.getPointer()+": "+lista.getElem());
+		lista.moveNext();
+		System.out.println("Pointer: "+lista.getPointer()+"  size: "+lista.size());
+		lista.movePrev();
+		System.out.println("Pointer: "+lista.getPointer()+"  size: "+lista.size());
+		lista.setElem(9999);
+		lista.insert(7777);
+		System.out.println(".....");
+		printStatus(lista);
+		//sSystem.out.println("Elemento "+lista.getPointer()+": "+lista.getElem());
 
 		System.out.println("------------------------------------------");
 
