@@ -107,7 +107,9 @@ public class Tarea1 {
 		//sSystem.out.println("Elemento "+lista.getPointer()+": "+lista.getElem());
 
 		System.out.println("------------------------------------------");
-
+		System.out.println(".......Lista 2.......");
+		ListIPIF<Integer> lista2 = new ListIP<Integer>((ListIP<Integer>) lista);
+		printStatus(lista2);
 
 	}
 	

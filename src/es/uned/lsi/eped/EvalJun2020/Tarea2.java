@@ -6,7 +6,7 @@ import es.uned.lsi.eped.DataStructures.IteratorIF;
 ;
 
 public class Tarea2 {
-/*
+
 	public static void printStatus(DequeIF<Integer> param) {
 		System.out.print("Tamaño: ");
 		System.out.println(param.size());
@@ -152,5 +152,5 @@ public class Tarea2 {
 		printStatus(deque2);
 	}
 	
-	*/
+
 }
