@@ -34,47 +34,4 @@ public class Stack<E> extends Sequence<E> implements StackIF<E> {
 		this.size--;
 	}
 	
-	public void concatStackIF(StackIF<E> b) {
-		if (!b.isEmpty()) {
-			NodeSequence lastNode;
-			if (!this.isEmpty()) {
-				lastNode = this.getNode(this.size());
-			} else {
-				lastNode = new NodeSequence(b.getTop());
-				this.firstNode = lastNode;
-				b.pop();
-			}
-			while (!b.isEmpty()) {
-				NodeSequence newNode = new NodeSequence(b.getTop());
-				lastNode.setNext(newNode);
-				lastNode = newNode;
-				b.pop();
-				this.size++;
-			}
-		}
-	}
-	
-	public void concatStack(Stack<E> b) {
-		if ( !b.isEmpty()) {
-			if (!this.isEmpty()) {
-				NodeSequence lastNode = this.getNode(this.size());
-				lastNode.setNext(b.firstNode);
-			} else {
-				this.firstNode = b.firstNode;
-			}
-			this.size = this.size + b.size;
-		}
-	}
-	
-	public static int Fibonacci(int n) {
-		if (n<2) {return n;}
-		int nm1 = 1; int nm2 = 0;
-		for (int aux = 2;aux<=n;aux++) {
-			int sum = nm1 + nm2;
-			nm2 = nm1;
-			nm1 = sum;
-		}
-		return (nm1);
-	}
-
 }
