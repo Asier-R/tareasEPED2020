@@ -99,6 +99,7 @@ public class SequenceDL<E> extends Collection<E> implements SequenceDLIF<E> {
                 nodeS = nodeS.getNext();
                 NodeSequence newNode = new NodeSequence(nodeS.getValue());
                 pNode.setNext(newNode);
+                newNode.setPrev(pNode);
                 pNode = newNode;
             }
         }
